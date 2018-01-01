@@ -70,3 +70,26 @@ body {
     height: 200px;
     width: 200px;
 }
+
+.div-btn {
+    margin-top: 375px;
+    width: 100%;
+    align-content: center;
+}
+
+.btn-main {
+    width: 50%;
+    margin-left: 25%;
+    height: 70px;
+    background-color: #ffac33;
+    background-image: linear-gradient(#ffcc4d, #ffac33);
+    border-color: #f1a02a;
+    border-radius: 7px;
+}
+
+.btn-main a {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 45px;
+    color: #292f33;
+}
