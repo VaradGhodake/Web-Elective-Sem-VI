@@ -95,6 +95,7 @@ body {
 
 .div-ads {
     margin-top: 1%;
+    width: 100%;
 }
 
 .header-ads {
@@ -103,4 +104,8 @@ body {
     padding: 5px;
     margin-top: 40px;
     text-align: center;
+}
+
+.img-ads {
+    padding-left: 20%;
 }
