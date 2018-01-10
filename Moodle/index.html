@@ -1,87 +1,85 @@
 <html>
-		<head>
-			<title>
-					Course:Web Systems Technology
-			</title>
-		</head>
-		<style>
-				html,
-				body {
-						margin: 0;
-						padding: 0;
-				}
+	<head>
+		<title>
+			Course:Web Systems Technology
+		</title>
+	</head>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
 
-				.pageHeader{
-						background-color: black;
-						height: 78px;
-						margin-bottom: 30px;
-						padding-top: 1px;
-						padding-left: 50px;
+		.pageHeader{
+			background-color: black;
+			height: 78px;
+			margin-bottom: 30px;
+			padding-top: 1px;
+			padding-left: 50px;
+		}
+		.pageHeader h1 {
+			font-family: "Trebuchet MS";
+			color: white;
+		}
 
-				}
-				.pageHeader h1 {
-						font-family: "Trebuchet MS";
-						color: white;
-				}
+		.box {
+			width: 60%;
+			margin: auto;
+			background-color: #f5f5f5;
+			border: solid #ddd;
+			padding-top: 5px;
+			padding-left: 5px;
+			margin-bottom: 3px;
+		}
 
-				.box {
-						width: 60%;
-						margin: auto;
-						background-color: #f5f5f5;
-						border: solid #ddd;
-						padding-top: 5px;
-						padding-left: 5px;
-						margin-bottom: 3px;
-
-				}
-
-				.innerBox {
-						margin-left: 10%;
-						margin-right: 10%;
-						background-color: white;
-						padding: 10px;
-				}
+		.innerBox {
+			margin-left: 10%;
+			margin-right: 10%;
+			background-color: white;
+			padding: 10px;
+		}
 
 
-				.innerBoxLink {
-						text-decoration: none;
-						font-size: 110%;
-						color: #bf3503;
-				}
+		.innerBoxLink {
+			text-decoration: none;
+			font-size: 110%;
+			color: #bf3503;
+		}
 
-		</style>
-		<body>
-				<div class='pageHeader'>
-							<h1>Web Systems and Technologies(TY-2018)</h1>
-				</div>
-				<div class='box'> 
-							General
-						<div class= 'innerBox'>
-								<span> 
-									<img src="assignmentIcon.svg"> 
-									<a href = "#" class= 'innerBoxLink'>
-											Assignments here
-									</a>
-								</span>
-						</div>
-				</div>
-		</body>
+	</style>
+	<body>
+		<div class='pageHeader'>
+			<h1>Web Systems and Technologies(TY-2018)</h1>
+		</div>
+		<div class='box'> 
+			General
+			<div class= 'innerBox'>
+				<span> 
+					<img src="assignmentIcon.svg"> 
+						<a href = "#" class= 'innerBoxLink'>
+							Assignments here
+						</a>
+				</span>
+			</div>
+		</div>
+	</body>
 
-		<script>
-				var startDate = 1, assignmentNo = 1;
+	<script>
+		var startDate = 1, assignmentNo = 1;
 
-				function multiplyNode(node, count, deep) {
-    				for (var i = 0, copy; i < count - 1; i++) {
-        		copy = node.cloneNode(deep);
-        		node.parentNode.insertBefore(copy, node);
-    				}
-				}
+		function multiplyNode(node, count, deep) {
+  		for (var i = 0, copy; i < count - 1; i++) {
+     		copy = node.cloneNode(deep);
+     		node.parentNode.insertBefore(copy, node);
+  		}
+		}
 				
 
-				function wrappermultiplyNode(startDate, assignmentNo, count) {
-						multiplyNode(document.querySelector('.box'), count, true);											
-				}
+		function wrappermultiplyNode(startDate, assignmentNo, count) {
+			multiplyNode(document.querySelector('.box'), count, true);
+		}
 
-				wrappermultiplyNode(startDate, assignmentNo, 5);
-		</script>
+		wrappermultiplyNode(startDate, assignmentNo, 5);
+	</script>
 </html>
