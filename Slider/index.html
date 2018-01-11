@@ -11,8 +11,9 @@
     }
 
     body {
-      font-family: Verdana, sans-serif;
+      font-family: "Comic Sans MS";
       margin:0;
+      padding: 0;
     }
 
     .mySlides {
@@ -21,14 +22,6 @@
 
     img {
       vertical-align: middle;
-    }
-
-    .header {
-      font-family: "Trebuchet MS";
-      margin-left: 20%;
-      font-weight: 400;
-      color: #bf3503;
-      background-color:
     }
 
     /* Slideshow container */
@@ -100,17 +93,50 @@
       background-color: #717171;
     }
 
+    .controlButton {
+      padding: 10px;
+      color: #fff;
+      background: #00b8eb;
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .control {
+      margin-left: 20%;
+      margin-bottom: 10px;
+    }
+
+    .controlText {
+      padding: 10px;
+      border: none;
+      width: 300px;
+      border-bottom: solid 2px #808080;
+      border-left: solid 1px #808080;
+      border-right: solid 1px #808080;
+      border-top: solid 1px #808080;
+      transition: border 0.3s;
+    }
+
     </style>
   </head>
   <body>
-    <h2 class="header">My favourite movies:</h2>
-    <div class="slideshow-container">
 
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="images/wl.jpg" style="width:100%">
-      <div class="text"></div>
+    <div style="background-color: brown; margin-bottom: 20px; height: 40px;">
+      <h3 style="color: white; margin-top: 0; padding: 5px;">Favourite Movies:</h3><br>
     </div>
+
+    <div class="control">
+      <input class="controlText" type="text" placeholder="3000 ms" id ="text" />
+      <input class="controlButton" type="button" onclick="setSpeed()" value="Set Timing"/>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="images/wl.jpg" style="width:100%">
+        <div class="text"></div>
+      </div>
 
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
@@ -137,8 +163,16 @@
     </div>
 
     <script>
-      var slideIndex = 0;
+      var slideIndex = 1;
       showSlides(slideIndex);
+      var speed = 3000;
+      var interval = setInterval( function() { plusSlides(1); }, speed);
+
+      function setSpeed () {
+        speed = document.getElementById("text").value;
+        clearInterval(interval);
+        interval = setInterval( function() { plusSlides(1); }, speed);
+      }
 
       function plusSlides(n) {
         showSlides(slideIndex += n);
@@ -148,7 +182,7 @@
         showSlides(slideIndex = n);
       }
 
-      setInterval( function() { plusSlides(1); }, 2000);
+
 
       function showSlides(n) {
         var i;
