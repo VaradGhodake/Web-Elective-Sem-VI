@@ -22,6 +22,8 @@
 
     img {
       vertical-align: middle;
+      min-width: 60%;
+      max-height: 400px;
     }
 
     /* Slideshow container */
@@ -44,6 +46,7 @@
       font-size: 18px;
       transition: 0.6s ease;
       border-radius: 0 3px 3px 0;
+      background-color: black;
     }
 
     /* Position the "next button" to the right */
@@ -127,31 +130,57 @@
     </div>
 
     <div class="control">
-      <input class="controlText" type="text" placeholder="3000 ms" id ="text" />
+      <input class="controlText" type="text" placeholder="4000 ms" id ="text" />
       <input class="controlButton" type="button" onclick="setSpeed()" value="Set Timing"/>
+      <input class="controlButton" type="button" onclick="offSlideShow()" value="Stop Auto"/>
     </div>
 
     <div class="slideshow-container">
+
       <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
+        <div class="numbertext">1 / 7</div>
+        <img src="images/ib.jpg" style="width:100%">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 7</div>
         <img src="images/wl.jpg" style="width:100%">
         <div class="text"></div>
       </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="images/gwh.jpg" style="width:100%">
-      <div class="text"></div>
-    </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 7</div>
+        <img src="images/gwh.jpg" style="width:100%">
+        <div class="text"></div>
+      </div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="images/lll.jpg" style="width:100%">
-      <div class="text"></div>
-    </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 7</div>
+        <img src="images/lll.jpg" style="width:100%">
+        <div class="text"></div>
+      </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 7</div>
+        <img src="images/dk.jpg" style="width:100%">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 7</div>
+        <img src="images/fg.png" style="width:100%">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 7</div>
+        <img src="images/gvt.jpeg" style="width:100%">
+        <div class="text"></div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
     </div>
     <br>
@@ -160,13 +189,20 @@
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
     </div>
 
     <script>
       var slideIndex = 1;
       showSlides(slideIndex);
-      var speed = 3000;
+      var speed = 4000;
       var interval = setInterval( function() { plusSlides(1); }, speed);
+
+      function offSlideShow() {
+        clearInterval(interval);
+      }
 
       function setSpeed () {
         speed = document.getElementById("text").value;
